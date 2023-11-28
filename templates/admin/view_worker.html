@@ -1,0 +1,41 @@
+{% extends 'admin/admin_homepage1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="post">
+  <table width="1100" border="1" style="border-collapse: collapse; margin: 20px; background-color: white; color: black;">
+    <tr>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">#</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Worker Name</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Availability</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Latitude</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Longitude</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Phone Number</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">&nbsp;</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ forloop.counter }}</td>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ i.worker_name }}</td>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ i.availability }}</td>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ i.latitude }}</td>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ i.longitude }}</td>
+      <td rowspan="2" style="font-size: 20px; color: black; padding: 10px;">{{ i.phone_no }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;"><a href="/accept_worker/{{ i.LOGIN.id }}" style="text-decoration: none; color: black;">Accept</a></td>
+    </tr>
+    <tr>
+      <td style="font-size: 20px; color: black; padding: 10px;"><a href="#" style="text-decoration: none; color: black;">Reject</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+
+</body>
+</html>
+{% endblock %}

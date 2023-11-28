@@ -1,0 +1,29 @@
+{% extends 'user/user_home1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>  <form action="" method="get">
+    <table style="width: 400%; border-collapse: collapse; margin-top: 20px; font-family: Arial, sans-serif;">
+      <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;font-size: 20px">#</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;font-size: 20px">Service Name</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px; background-color: #f2f2f2;font-size: 20px">&nbsp;</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 8px; font-size: 20px">{{ forloop.counter }}</td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;font-size: 20px">{{ i.service_name }}</td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;font-size: 20px"><a href="/user_view_workers/{{ i.id }}" style="text-decoration: none; color: #0000cc;">VIEW WORKERS</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </form>
+
+</body>
+</html>
+{% endblock %}

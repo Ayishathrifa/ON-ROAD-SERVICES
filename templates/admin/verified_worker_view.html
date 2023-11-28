@@ -1,0 +1,35 @@
+{% extends 'admin/admin_homepage1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+  <table width="1100" border="1" style="border-collapse: collapse; margin: 20px;">
+    <tr>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">#</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Worker Name</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Availability</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Latitude</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Longitude</th>
+      <th scope="col" style="font-size: 20px; color: black; padding: 10px;">Phone Number</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ forloop.counter }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ i.worker_name }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ i.availability }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ i.latitude }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ i.longitude }}</td>
+      <td style="font-size: 20px; color: black; padding: 10px;">{{ i.phone_no }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

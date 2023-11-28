@@ -1,0 +1,33 @@
+{% extends 'user/user_home1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+ <form action="" method="post">
+    <table style="width: 400%; border-collapse: collapse; margin-top: 20px; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border: 1px solid #ddd;">
+      <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 12px; background-color: #f2f2f2;">#</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">Worker Name</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">Availability</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">Location</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">Ratings</th>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">{{ forloop.counter }}</td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">{{ i.WORKER.worker_name }}</td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px">{{ i.WORKER.availability }}</td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px"><a href="/long_lat/{{ i.id }}" style="text-decoration: none; color: #0066cc;">Click here</a></td>
+        <td style="border: 1px solid #dddddd; text-align: left; padding: 12px;font-size: 20px"><a href="/user_view_ratings/{{ i.WORKER.id }}" style="text-decoration: none; color: #0066cc;">View Ratings</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </form>
+</body>
+</html>
+{% endblock %}

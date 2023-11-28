@@ -1,0 +1,31 @@
+{% extends 'worker/worker_homepage1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+  <table width="1100" border="1" style="border-collapse: collapse; margin: 20px; background-color: #fff; font-size: 20px;">
+    <tr>
+      <th scope="col" style="background-color: #fff; padding: 10px;">#</th>
+      <th scope="col" style="background-color: #fff; padding: 10px;">User Name</th>
+      <th scope="col" style="background-color: #fff; padding: 10px;">Rating</th>
+      <th scope="col" style="background-color: #fff; padding: 10px;">Review</th>
+    </tr>
+
+    {% for i in data %}
+    <tr>
+      <td style="">{{ forloop.counter }}</td>
+      <td style="">{{ i.USER.user_name }}</td>
+      <td style="">{{ i.Ratings }}</td>
+      <td style="">{{ i.Reviews }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

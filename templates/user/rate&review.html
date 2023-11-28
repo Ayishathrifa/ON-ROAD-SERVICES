@@ -1,0 +1,35 @@
+{% extends 'user/user_home1.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/rate_review_post" method="post" style="max-width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+        {% csrf_token %}
+        <tr>
+            <th scope="row" style="padding: 10px; border: 1px solid #ddd; text-align: left; background-color: #007BFF; color: #fff;">Review:</th>
+            <td><input type="text" name="textfield" id="textfield" required style="width: calc(100% - 18px); padding: 8px; margin: 5px 0 15px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box;"></td>
+        </tr>
+        <tr>
+            <th scope="row" style="padding: 10px; border: 1px solid #ddd; text-align: left; background-color: #007BFF; color: #fff;">Rate:</th>
+            <td><input type="text" name="textfield2" id="textfield2" required style="width: calc(100% - 18px); padding: 8px; margin: 5px 0 15px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box;"></td>
+        </tr>
+        <tr>
+            <th colspan="2" scope="row" style="text-align: right;">
+                <input type="submit" name="button" id="button" value="Send" style="background-color: #007BFF; color: #fff; padding: 10px 15px; border: none; border-radius: 3px; cursor: pointer;">
+            </th>
+        </tr>
+    </table>
+</form>
+
+
+
+</body>
+</html>
+{% endblock %}
+
